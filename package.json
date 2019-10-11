@@ -1,0 +1,69 @@
+{
+  "name": "evf-boon",
+  "version": "0.1.0",
+  "homepage": "https://139.180.30.44/demo",
+  "proxy": "http://localhost:4000",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "antd": "^3.20.3",
+    "axios": "^0.19.0",
+    "classnames": "^2.2.6",
+    "express": "^4.17.1",
+    "lint-staged": "^9.2.0",
+    "prettier": "^1.18.2",
+    "react": "^16.8.6",
+    "react-app-polyfill": "^1.0.1",
+    "react-dom": "^16.8.6",
+    "react-loadable": "^5.5.0",
+    "react-redux": "^7.1.0",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "recharts": "^1.7.1",
+    "recompose": "^0.30.0",
+    "redux": "^4.0.4",
+    "redux-form": "^8.2.5",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^4.3.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "server": "json-server --watch -p 4000 ./server/db.json"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "ie 11",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "ie 11"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "devDependencies": {
+    "husky": "^3.0.0",
+    "pretty-quick": "^1.11.1"
+  }
+}

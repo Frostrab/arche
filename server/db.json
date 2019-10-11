@@ -1,0 +1,459 @@
+{
+  "login": {
+    "employee": {
+      "empNo": "001754",
+      "firstNameTH": "สัญชัย",
+      "lastNameTH": "ต้นพุดซา",
+      "comCode": "10000001",
+      "orgId": "10001416",
+      "positionId": "20000641"
+    },
+    "menu": [
+      {
+        "name": "Inbox",
+        "displayOnly": false,
+        "url": "/Inbox",
+        "icon": "inbox",
+        "parent": null
+      },
+      {
+        "name": "ใบประเมินผู้ขาย",
+        "displayOnly": false,
+        "url": "/Evaluation_Group",
+        "icon": "file-text",
+        "parent": [
+          {
+            "name": "การจัดการ",
+            "icon": "file-protect",
+            "displayOnly": false,
+            "url": "/Evaluation_Group/Evaluation_MGT_Group",
+            "parent": [
+              {
+                "name": "ประเมินผู้ขาย",
+                "icon": "file-protect",
+                "displayOnly": false,
+                "url": "/Evaluation_Group/Evaluation_MGT_Group/Evaluation",
+                "parent": null
+              },
+              {
+                "name": "ภาพรวมประเมินผู้ขาย",
+                "icon": "file-protect",
+                "displayOnly": false,
+                "url": "/Evaluation_Group/Evaluation_MGT_Group/SummaryEvaluation",
+                "parent": null
+              }
+            ]
+          },
+          {
+            "name": "รายงาน",
+            "icon": "file-pdf",
+            "displayOnly": false,
+            "url": "/Evaluation_Group/Evaluation_RP_Group",
+            "parent": [
+              {
+                "name": "รายงานสรุปผลการประเมิน",
+                "icon": "file-pdf",
+                "displayOnly": false,
+                "url": "/Evaluation_Group/Evaluation_RP_Group/EvaluationReportSummary",
+                "parent": null
+              },
+              {
+                "name": "หนังสือผลการประเมินผู้ขาย",
+                "icon": "file-pdf",
+                "displayOnly": false,
+                "url": "/Evaluation_Group/Evaluation_RP_Group/EvaluationReportVendor",
+                "parent": null
+              }
+            ]
+          },
+          {
+            "name": "ติดตั้ง",
+            "icon": "download",
+            "displayOnly": false,
+            "url": "/Evaluation_Group/Evaluation_Setup_Group",
+            "parent": [
+              {
+                "name": "ตัวชี้วัด",
+                "icon": "tag",
+                "displayOnly": false,
+                "url": "/Evaluation_Group/Evaluation_Setup_Group/Performance",
+                "parent": null
+              },
+              {
+                "name": "กลุ่มตัวชี้วัด",
+                "icon": "tags",
+                "displayOnly": false,
+                "url": "/Evaluation_Group/Evaluation_Setup_Group/PerformanceGroup",
+                "parent": null
+              },
+              {
+                "name": "ระยะเวลาประเมิน",
+                "icon": "pull-request",
+                "displayOnly": false,
+                "url": "/Evaluation_Group/Evaluation_Setup_Group/Period",
+                "parent": null
+              },
+              {
+                "name": "เกณฑ์การประเมิน",
+                "icon": "dashboard",
+                "displayOnly": false,
+                "url": "/Evaluation_Group/Evaluation_Setup_Group/Grade",
+                "parent": null
+              },
+              {
+                "name": "ระดับคะแนน",
+                "icon": "line-chart",
+                "displayOnly": false,
+                "url": "/Evaluation_Group/Evaluation_Setup_Group/LevelPoint",
+                "parent": null
+              },
+              {
+                "name": "หลักเกณฑ์",
+                "icon": "sliders",
+                "displayOnly": false,
+                "url": "/Evaluation_Group/Evaluation_Setup_Group/Criteria",
+                "parent": null
+              },
+              {
+                "name": "Template แบบประเมิน",
+                "icon": "layout",
+                "displayOnly": false,
+                "url": "/Evaluation_Group/Evaluation_Setup_Group/EvaluationTemplate",
+                "parent": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "ผู้ขาย",
+        "icon": "team",
+        "displayOnly": false,
+        "url": "/Vendor_Group",
+        "parent": [
+          {
+            "name": "ข้อมูลผู้ขาย",
+            "icon": "idcard",
+            "displayOnly": false,
+            "url": "/Vendor_Group/VendorProfile",
+            "parent": null
+          },
+          {
+            "name": "คัดเลือกผู้ขาย",
+            "icon": "solution",
+            "displayOnly": false,
+            "url": "/Vendor_Group/VendorFilter",
+            "parent": null
+          }
+        ]
+      },
+      {
+        "name": "ข้อมูลส่วนกลาง",
+        "icon": "bank",
+        "displayOnly": false,
+        "url": "/CentralSetting",
+        "parent": [
+          {
+            "name": "ปฎิทินวันหยุด",
+            "icon": "calendar",
+            "displayOnly": false,
+            "url": "/CentralSetting/HolidayCalendar",
+            "parent": null
+          },
+          {
+            "name": "ตั้งค่าผู้อนุมัติ",
+            "icon": "user-add",
+            "displayOnly": false,
+            "url": "/CentralSetting/Approval",
+            "parent": null
+          }
+        ]
+      },
+      {
+        "name": "กำหนดสิทธิ์การใช้งาน",
+        "icon": "setting",
+        "displayOnly": false,
+        "url": "/Authorization",
+        "parent": [
+          {
+            "name": "จัดการสิทธิ์การใช้งานระบบ",
+            "icon": "security-scan",
+            "displayOnly": false,
+            "url": "/Authorization/RoleManagement",
+            "parent": null
+          },
+          {
+            "name": "กำหนดสิทธิ์ผู้ใช้งาน",
+            "icon": "eye",
+            "displayOnly": false,
+            "url": "/Authorization/UserRole",
+            "parent": null
+          },
+          {
+            "name": "สิทธิ์ข้ามบริษัท",
+            "icon": "tool",
+            "displayOnly": false,
+            "url": "/Authorization/AuthorityCompany",
+            "parent": null
+          }
+        ]
+      }
+    ]
+  },
+  "Approval": {
+    "id": 2,
+    "comCode": "10000001",
+    "orgId": "10000074",
+    "approvalList": [
+      {
+        "id": 5,
+        "adUser": "BOONRAWD_LOCALds01",
+        "step": 1
+      }
+    ]
+  },
+  "UserRoles": {
+    "adUser": "BOONRAWD_LOCALds01",
+    "roleList": [0]
+  },
+  "HolidayCalendar": {
+    "year": "2019",
+    "holidayList": [
+      {
+        "holidayDateString": "2019-01-01",
+        "description": "Test วันหยุด 1"
+      },
+      {
+        "holidayDateString": "2019-01-02",
+        "description": "Test วันหยุด 2"
+      },
+      {
+        "holidayDateString": "2019-01-03",
+        "description": "Test วันหยุด 3"
+      }
+    ]
+  },
+  "AuthorityCompany": {
+    "adUser": "string",
+    "comCode": ["string"]
+  },
+  "AppCompoSiteRole": {
+    "id": 0,
+    "name": "string",
+    "description": "string",
+    "active": true,
+    "roleItem": [
+      {
+        "menuCode": "string",
+        "isDisplay": true,
+        "isManage": true,
+        "parentMenu": [
+          {
+            "menuCode": "string",
+            "isDisplay": true,
+            "isManage": true,
+            "parentMenu": [null]
+          }
+        ]
+      }
+    ]
+  },
+  "Performance": {
+    "id": 1,
+    "performanceNameTh": "test ตัวชี้วัด 1",
+    "performanceNameEn": "test performance item 1"
+  },
+  "PerformanceGroup": {
+    "id": 1,
+    "performanceGroupNameTh": "test กลุ่มตัวชี้วัด 1",
+    "performanceGroupNameEn": "test performance group 1",
+    "sapScoreField": "SCORE_1_Quality",
+    "performanceGroupItems": [1]
+  },
+  "EveForm": {
+    "name": "แบบประเมินสำหรับ ทดสอบ",
+    "criteria": {
+      "id": 4,
+      "criteriaName": "หลักเกณฑ์ประเมิน ทั่วไป",
+      "isDefault": false,
+      "isUse": false,
+      "criteriaGroups": [
+        {
+          "id": 4,
+          "criteriaId": 4,
+          "kpiGroupId": 2,
+          "sequence": 1,
+          "maxScore": 40,
+          "criteriaItems": [
+            {
+              "id": 7,
+              "sequence": 1,
+              "criteriaGroupId": 4,
+              "kpiId": 2,
+              "kpiNameTh": "ความรู้ ความชำนาญในการให้คำปรึกษาในงาน และ/หรือการแก้ปัญหางาน",
+              "kpiNameEn": "en Text",
+              "maxScore": 20
+            },
+            {
+              "id": 8,
+              "sequence": 2,
+              "criteriaGroupId": 4,
+              "kpiId": 3,
+              "kpiNameTh": " แผนการดำเนินงานสอดคล้องและเป็นไปตามระยะเวลาดำเนินงาน",
+              "kpiNameEn": "en Text",
+              "maxScore": 20
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "criteriaId": 4,
+          "kpiGroupId": 3,
+          "sequence": 2,
+          "maxScore": 20,
+          "criteriaItems": [
+            {
+              "id": 9,
+              "sequence": 1,
+              "criteriaGroupId": 5,
+              "kpiId": 4,
+              "kpiNameTh": "ความสามารถในการควบคุมงานให้เป็นไปตามแผน",
+              "kpiNameEn": "en text",
+              "maxScore": 20
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "criteriaId": 4,
+          "kpiGroupId": 4,
+          "sequence": 3,
+          "maxScore": 10,
+          "criteriaItems": [
+            {
+              "id": 10,
+              "sequence": 1,
+              "criteriaGroupId": 6,
+              "kpiId": 5,
+              "kpiNameTh": "มีการนำเสนอคำปรึกษาและแนวทางในเชิงนวัตกรรมที่เกี่ยวข้องกับการลดต้นทุนและเวลาให้โครงการนั้นๆ",
+              "kpiNameEn": "en text",
+              "maxScore": 5
+            },
+            {
+              "id": 11,
+              "sequence": 2,
+              "criteriaGroupId": 6,
+              "kpiId": 6,
+              "kpiNameTh": "มีการนำเสนอคำปรึกษาและแนวทางในเชิงนวัตกรรมที่เกี่ยวข้องกับการเพิ่มประสิทธิภาพให้โครงการนั้นๆ",
+              "kpiNameEn": "en text",
+              "maxScore": 5
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "criteriaId": 4,
+          "kpiGroupId": 5,
+          "sequence": 4,
+          "maxScore": 20,
+          "criteriaItems": [
+            {
+              "id": 12,
+              "sequence": 1,
+              "criteriaGroupId": 7,
+              "kpiId": 7,
+              "kpiNameTh": "ความสามารถของทีมงานในการประสานงาน",
+              "kpiNameEn": "en text",
+              "maxScore": 10
+            },
+            {
+              "id": 13,
+              "sequence": 2,
+              "criteriaGroupId": 7,
+              "kpiId": 8,
+              "kpiNameTh": "สามารถติดต่อประสานงาน สะดวก รวดเร็วและพร้อมให้บริการทั้งในกรณีเร่งด่วน",
+              "kpiNameEn": "en text",
+              "maxScore": 10
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "criteriaId": 4,
+          "kpiGroupId": 6,
+          "sequence": 5,
+          "maxScore": 10,
+          "criteriaItems": [
+            {
+              "id": 14,
+              "sequence": 1,
+              "criteriaGroupId": 8,
+              "kpiId": 9,
+              "kpiNameTh": "มีการจัดทำรายงานความคืบหน้าของงานและ Final Report เพื่อสรุปงาน",
+              "kpiNameEn": "en text",
+              "maxScore": 10
+            }
+          ]
+        }
+      ]
+    },
+    "levelPoint": {
+      "id": 1,
+      "name": "ระดับ ทั่วไป",
+      "isDefault": false,
+      "levelPointItems": [
+        {
+          "id": 1,
+          "levelPointId": 1,
+          "levelPointName": "ต่ำกว่ามาตรฐาน",
+          "percentPoint": 20
+        },
+        {
+          "id": 2,
+          "levelPointId": 1,
+          "levelPointName": "ธรรมดา",
+          "percentPoint": 50
+        },
+        {
+          "id": 3,
+          "levelPointId": 1,
+          "levelPointName": "สูงกว่ามาตรฐาน",
+          "percentPoint": 100
+        }
+      ]
+    },
+    "grade": {
+      "id": 1,
+      "name": "เกณฑ์การประเมิน ทั่วไป",
+      "isDefault": true,
+      "gradeItems": [
+        {
+          "id": 2,
+          "gradeId": 1,
+          "startPoint": 60,
+          "endPoint": 79,
+          "gradeNameTh": "ตามมาตรฐาน",
+          "gradeNameEn": null
+        },
+        {
+          "id": 3,
+          "gradeId": 1,
+          "startPoint": 80,
+          "endPoint": 100,
+          "gradeNameTh": "สูงกว่ามาตรฐาน",
+          "gradeNameEn": null
+        }
+      ]
+    }
+  },
+  "test": [
+    {
+      "id": 1,
+      "name": "หนึ่ง"
+    },
+    {
+      "id": 1,
+      "name": "หนึ่ง"
+    }
+  ]
+}
