@@ -44,7 +44,7 @@ const MainCard = props => {
 
           <Descriptions.Item label='Period Contract'>{props.REC.PeriodCon} Month</Descriptions.Item>
           {/* <Descriptions.Item label=''></Descriptions.Item> */}
-          <Descriptions.Item label='Total Alchemy Support '>{props.REC.TotalASup}</Descriptions.Item>
+          <Descriptions.Item label='Total Alchemy Support '>{props.REC.OPsup + props.REC.Consume}</Descriptions.Item>
           <Descriptions.Item label='Jose shot machine'></Descriptions.Item>
 
           <Descriptions.Item label='BDE Name'>{props.REC.BDEName}</Descriptions.Item>

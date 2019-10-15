@@ -11,6 +11,7 @@ const TableMain = props => {
         size="middle"
         scroll={props.scroll}
         pagination={{ pageSize: 4 }}
+        loading={false}
       />
     </div>
   )

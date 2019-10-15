@@ -10,12 +10,8 @@ const getMenu = () => axios.get(`/login`)
 const Index = props => {
   const [collapsed, setCollapsed] = useState(true)
   const [menu, setMenu] = useState([
-    {
-      name: 'Outlet',
-      displayOnly: false,
-      url: '/',
-      icon: 'inbox',
-      parent: [
+    
+     
         {
           name: 'Universe',
           icon: 'file-protect',
@@ -30,51 +26,8 @@ const Index = props => {
           url: '/perform',
           parent: null,
         },
-      ],
-    },
-    {
-      name: 'Sales ',
-      displayOnly: false,
-      url: '/Sales ',
-      icon: 'file-text',
-      parent: [
-        {
-          name: 'Accounts',
-          icon: 'file-protect',
-          displayOnly: false,
-          url: '/Sales/Accounts',
-          parent: null,
-        },
-        {
-          name: 'Sale',
-          icon: 'file-protect',
-          displayOnly: false,
-          url: '/Sales/Sale',
-          parent: null,
-        },
-      ],
-    },
-    {
-      name: 'Product',
-      icon: 'team',
-      displayOnly: false,
-      url: '/Product',
-      parent: null,
-    },
-    {
-      name: 'Order',
-      icon: 'team',
-      displayOnly: false,
-      url: '/Order',
-      parent: null,
-    },
-    {
-      name: 'OrderFillter',
-      icon: 'file-text',
-      displayOnly: false,
-      url: '/OrderFillter',
-      parent: null,
-    },
+     
+   
   ])
   const [userLogin, setUserLogin] = useState({
     empNo: '001754',
