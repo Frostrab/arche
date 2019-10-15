@@ -12,211 +12,57 @@ import {
   Col,
   Form,
   Select,
+  Descriptions,
+  
 } from 'antd'
 
 import axios from 'axios'
 
 const MainCard = props => {
-  useEffect(() => {
-    console.log('Main Card', props.REC)
-  })
-
-  const [Rowstyle] = useState({
-    gutter: 16,
-  })
+ 
 
   return (
     <div>
-      <Row style={{ Rowstyle, marginTop: '15px' }}>
-        <Col span={3}>
-          <span>Outlet</span>
-        </Col>
-        <Col span={3}>
-          <span>{props.REC.Outlet}</span>
-        </Col>
-        <Col span={3}>
-          <span>Account Number</span>
-        </Col>
-        <Col span={3}>
-          <span>{props.REC.AccNo}</span>
-        </Col>
-        <Col span={3}>
-          <span>Puchasing Value</span>
-        </Col>
-        <Col span={3}>
-          <span>{props.REC.PurchaseVal}</span>
-        </Col>
-        <Col span={3}>
-          <span>Light Box</span>
-        </Col>
-        <Col span={3}>
-          <span>{props.REC.LightBox}</span>
-        </Col>
-      </Row>
-      {/* Row 2 */}
-      <Row style={{ Rowstyle }}>
-        <Col span={3}>
-          <span>Area/Province</span>
-        </Col>
-        <Col span={3}>
-          <span>{props.REC.Province}</span>
-        </Col>
-        <Col span={3}>
-          <span>Address</span>
-        </Col>
-        <Col span={3}>
-          <span>
-            {props.REC.Road} {props.REC.Soi}
-          </span>
-        </Col>
-        <Col span={3}>
-          <span>Trade A&P (OP Supoort)</span>
-        </Col>
-        <Col span={3}>
-          <span>{props.REC.OPsup}</span>
-        </Col>
-        <Col span={3}>
-          <span>Trent Card</span>
-        </Col>
-        <Col span={3}>
-          <span>{props.REC.TreantCard}</span>
-        </Col>
-      </Row>
-      {/* Row 3 */}
-      <Row style={{ Rowstyle }}>
-        <Col span={3}>
-          <span>Type/Subtype</span>
-        </Col>
-        <Col span={3}>
-          <span>{props.REC.Type}</span>
-        </Col>
-        <Col span={3}>
-          <span></span>
-        </Col>
-        <Col span={3}>
-          <span></span>
-        </Col>
-        <Col span={3}>
-          <span>Consumer A&P (Marketing Support)</span>
-        </Col>
-        <Col span={3}>
-          <span>{props.REC.MarketSup}</span>
-        </Col>
-        <Col span={3}>
-          <span>Menu</span>
-        </Col>
-        <Col span={3}>
-          <span>Result 4</span>
-        </Col>
-      </Row>
-      {/* Row 4 */}
-      <Row style={{ Rowstyle }}>
-        <Col span={3}>
-          <span>Period of Contract</span>
-        </Col>
-        <Col span={3}>
-          <span>{props.REC.PeriodCon} Month</span>
-        </Col>
-        <Col span={3}>
-          <span></span>
-        </Col>
-        <Col span={3}>
-          <span></span>
-        </Col>
-        <Col span={3}>
-          <span>Total Alchemy's Support</span>
-        </Col>
-        <Col span={3}>
-          <span>{props.REC.TotalASUP}</span>
-        </Col>
-        <Col span={3}>
-          <span>Jose Shot Machine</span>
-        </Col>
-        <Col span={3}>
-          <span>Result 4</span>
-        </Col>
-      </Row>
-      {/* Row 5 */}
-      <Row style={{ Rowstyle }}>
-        <Col span={3}>
-          <span>BDE Name</span>
-        </Col>
-        <Col span={3}>
-          <span></span>
-        </Col>
-        <Col span={3}>
-          <span>Contract Person</span>
-        </Col>
-        <Col span={3}>
-          <span>{props.REC.ConPer}</span>
-        </Col>
-        <Col span={3}>
-          <span>% OP Support Ratio</span>
-        </Col>
-        <Col span={3}>
-          <span>{props.REC.OPSupRatio} %</span>
-        </Col>
-        <Col span={3}>
-          <span>Refrigerator</span>
-        </Col>
-        <Col span={3}>
-          <span>Result 4</span>
-        </Col>
-      </Row>
-      {/* Row 6 */}
-      <Row style={{ Rowstyle }}>
-        <Col span={3}>
-          <span>Supervisor Name</span>
-        </Col>
-        <Col span={3}>
-          <span></span>
-        </Col>
-        <Col span={3}>
-          <span>Position</span>
-        </Col>
-        <Col span={3}>
-          <span></span>
-        </Col>
-        <Col span={3}>
-          <span>%Marketing Support Ratio</span>
-        </Col>
-        <Col span={3}>
-          <span>2%</span>
-        </Col>
-        <Col span={3}>
-          <span>Glasses</span>
-        </Col>
-        <Col span={3}>
-          <span>Result 4</span>
-        </Col>
-      </Row>
-      {/* Row 7 */}
-      <Row style={{ Rowstyle }}>
-        <Col span={3}>
-          <span>Type of Contract</span>
-        </Col>
-        <Col span={3}>
-          <span></span>
-        </Col>
-        <Col span={3}>
-          <span>Contract Number</span>
-        </Col>
-        <Col span={3}>
-          <span>{props.REC.ConNo}</span>
-        </Col>
-        <Col span={3}>
-          <span>%Total Alchemy Ratio</span>
-        </Col>
-        <Col span={3}>
-          <span>{props.REC.TotalAlRatio} %</span>
-        </Col>
-        <Col span={3}>
-          <span>ETC</span>
-        </Col>
-        <Col span={3}>
-          <span>{props.REC.ETC}</span>
-        </Col>
-      </Row>
+      <Descriptions
+       bordered
+       column={{ xxl: 4, xl: 3, lg: 3, md: 2, sm: 2, xs: 1 }}
+      >
+          <Descriptions.Item label='outlet'>{props.REC.Outlet}</Descriptions.Item>
+          <Descriptions.Item label='Account Number'>{props.REC.AccNo}</Descriptions.Item>
+          <Descriptions.Item label='Purchase Value'>{props.REC.PurchaseVal}</Descriptions.Item>
+          <Descriptions.Item label='LightBox'>{props.REC.LightBox}</Descriptions.Item>
+
+          <Descriptions.Item label='Area/Province'>{props.REC.Province}</Descriptions.Item>
+          <Descriptions.Item label='Address'>{props.REC.Road} {props.REC.Soi}</Descriptions.Item>
+          <Descriptions.Item label='Trade A&P(OP Support)'>{props.REC.OPsup}</Descriptions.Item>
+          <Descriptions.Item label='Tent Card'>{props.REC.TrentCard}</Descriptions.Item>
+    
+          <Descriptions.Item label='Type/Subtype'>{props.REC.Type}</Descriptions.Item>
+          {/* <Descriptions.Item label=''></Descriptions.Item> */}
+          <Descriptions.Item label='Consumer A&P(Market Support)'>{props.REC.Consume}</Descriptions.Item>
+          <Descriptions.Item label='Menu'></Descriptions.Item>
+
+          <Descriptions.Item label='Period Contract'>{props.REC.PeriodCon} Month</Descriptions.Item>
+          {/* <Descriptions.Item label=''></Descriptions.Item> */}
+          <Descriptions.Item label='Total Alchemy Support '>{props.REC.TotalASup}</Descriptions.Item>
+          <Descriptions.Item label='Jose shot machine'></Descriptions.Item>
+
+          <Descriptions.Item label='BDE Name'>{props.REC.BDEName}</Descriptions.Item>
+          <Descriptions.Item label='Contact person'>{props.REC.ConPer}</Descriptions.Item>
+          <Descriptions.Item label='%OP Support Ratio'>{props.REC.OPSupRatio} %</Descriptions.Item>
+          <Descriptions.Item label='Refidgerator'></Descriptions.Item>
+
+          <Descriptions.Item label='Supervisor Name'>{props.REC.Supvisor}</Descriptions.Item>
+          <Descriptions.Item label='Position'>{props.REC.Position}</Descriptions.Item>
+          <Descriptions.Item label='%Market Support Ratio'>{props.REC.MarketSup}</Descriptions.Item>
+          <Descriptions.Item label='Glasses'></Descriptions.Item>
+
+          <Descriptions.Item label='Type of Contract'>{props.REC.Type}</Descriptions.Item>
+          <Descriptions.Item label='Contract Number'>{props.REC.AccNo}</Descriptions.Item>
+          <Descriptions.Item label='%Total Alchemy Ratio'>{props.REC.TotalAlRatio} %</Descriptions.Item>
+          <Descriptions.Item label='ETC'>{props.REC.ETC}</Descriptions.Item>
+
+      </Descriptions>
     </div>
   )
 }
