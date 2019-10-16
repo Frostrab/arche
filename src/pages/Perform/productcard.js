@@ -12,7 +12,9 @@ const Header = styled.div`
 
 const productcard = props => {
 
-
+    const Pag ={
+        pageSize:20
+    }
 
     const data = []
     for (let i = 0; i < 100; i++) {
@@ -27,57 +29,67 @@ const productcard = props => {
 
     const column = [
         {
-            title: 'Category',
-            dataIndex: 'Category',
+            title: 'Contrat Target/Year',
             width: 100,
-            key: 'Category',
+            children: [
+                {
+                    title: 'Vol(cs)',
+                    dataIndex: 'CategoryName',
+                    width: 100,
+                    key: 'CategoryName',
+                },
+                {
+                    title: 'Vol(btls)',
+                    dataIndex: 'ProductName',
+                    width: 100,
+                    key: 'ProductName',
+                },
+                {
+                    title: 'Status',
+                    dataIndex: 'ProductName',
+                    width: 100,
+                    key: 'ProductName',
+                },
+            ]
         },
         {
-            title: 'CategoryName',
-            dataIndex: 'CategoryName',
+            title: 'Total FY 1920(YTD)',
             width: 100,
-            key: 'CategoryName',
+            children: [
+                {
+                    title: 'Target Vol(blts)',
+                    dataIndex: 'CategoryName',
+                    width: 100,
+                    key: 'CategoryName',
+                },
+                {
+                    title: 'Actual Vol(blts)',
+                    dataIndex: 'ProductName',
+                    width: 100,
+                    key: 'ProductName',
+                },
+                {
+                    title: '%',
+                    dataIndex: 'ProductName',
+                    width: 100,
+                    key: 'ProductName',
+                },
+                {
+                    title: 'Diff(vol)',
+                    dataIndex: 'ProductName',
+                    width: 100,
+                    key: 'ProductName',
+                },
+                {
+                    title: 'Actual Value',
+                    dataIndex: 'ProductName',
+                    width: 100,
+                    key: 'ProductName',
+                },
+            ]
         },
-        {
-            title: 'ProductName',
-            dataIndex: 'ProductName',
-            width: 100,
-            key: 'ProductName',
-        },
-        {
-            title: 'Status',
-            dataIndex: 'Status',
-            width: '10%',
-            align:'center',
-            key: 'Status',
-            render: Status => {
-                switch (Status) {
-                    case 'Yes':
-                        return (
-                            <Icon type="check" />
-                        );
-                        break;
-                    case 'No':
-                        return (
-                            <Icon type="close" />
-                        );
-                        break;
-                }
-            }
-        },
-        {
-            title: 'Operation',
-            width: '10%',
-            align:'center',
-            render: (text, record) => {
-
-                return (
-                    <Button type='ghost'>
-                        Edit
-                    </Button>
-                )
-            },
-        },
+        
+        
     ]
 
     return (
@@ -93,7 +105,7 @@ const productcard = props => {
                     marginTop: '10px',
                 }}
             >
-                <TableMain data={data} column={column} />
+                <TableMain data={data} column={column} Pag={Pag} />
             </div>
         </div>
     )

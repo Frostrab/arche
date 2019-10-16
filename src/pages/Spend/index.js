@@ -286,6 +286,9 @@ const scroll = {
   x: '280%',
   // y: 240
 }
+const Pag = {
+    pageSize: 5
+}
 const SpendPage = props => {
   const data = []
   for (let i = 0; i < 100; i++) {

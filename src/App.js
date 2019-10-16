@@ -10,12 +10,13 @@ import OrderFillter from './pages/Order/OrderFillter'
 import Spendpage from './pages/Spend/index'
 import Performpage from './pages/Perform/index'
 import Universepage from './pages/Universe/index'
+import Uni from './pages/Universe/uni'
 function App() {
   return (
     <Switch>
       <PrivateRoute exact path="/" component={Universepage} />
       <PrivateRoute path="/perform" component={Performpage} />
-
+      <PrivateRoute path="/uni" component={Uni} />
       {/* <PrivateRoute path="/Inbox" component={Content1} /> */}
       <PrivateRoute path="/Sales/Accounts" component={Accounts} />
       <PrivateRoute path="/Product" component={Product} />

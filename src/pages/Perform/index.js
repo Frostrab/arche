@@ -14,6 +14,8 @@ import {
     Row,
     Col,
     Select,
+    Popover,
+
 } from 'antd'
 import Layout from '../../components/layout/'
 import axios from 'axios'
@@ -24,6 +26,7 @@ import Productcard from '../../pages/Perform/productcard'
 const EditableContext = React.createContext()
 
 const { Option } = Select
+
 
 const PerformPage = props => {
     const [Monthly, setMonthly] = useState([])
@@ -64,6 +67,8 @@ color: black
 display: flex
 `
 
+
+
     const [data] = useState([])
     for (let i = 0; i < 100; i++) {
         data.push({
@@ -72,77 +77,59 @@ display: flex
             Year: `Y${i}`,
             Code: `SPWH${i}`,
             Principle: 'TEG',
-            Category: 'SingleMal',
+            Category: 'SingleMalt',
             Brand: 'THE',
             Singlemalt: '12YO',
             Size: 700,
             Packing: '12',
             Approx: 4173,
+            Volblts: 1,
+            ActualB:1,
+            
         })
     }
     const scroll = {
-        x: '300%',
-        // y: 240
+        // x: '100%',
+        y: 240
     }
 
-    const onSearch = () => { }
-    const reset = () => { }
 
     const [editable, setEditable] = useState(false)
 
     const [filterDropdownVisible, setFDDV] = useState(false)
     const [searchText, setSearchText] = useState('')
+    const [selectedKeys, setSelectedKeys] = useState([]);
     const [editingKey, setEditKey] = useState('')
 
-    const cancel = () => {
-        setEditKey('')
-    }
-
-    const [selectedKeys, setSelectedKeys] = useState()
-    const [confirm, setConfirm] = useState()
-
-    const handleSearch = (selectedKeys, confirm) => () => { }
 
     const column = [
         {
             title: 'Code',
             dataIndex: 'Code',
-            width: 100,
+            width: 90,
             key: 'Code',
-            fixed: 'left',
+            // fixed: 'left',
             editable: true,
-            filterDropdown: ({ selectedKeys, confirm }) => (
-                <div className="custom-filter-dropdown" style={{ padding: 8 }}>
-                    <Input
-                        placeholder="Search name"
-                        value={searchText}
-                        onChange={e => setSearchText(e.target.value)}
-                        // onPressEnter={this.onSearch}
-                        style={{ width: 188, marginBottom: 8, display: 'block' }}
-                    />
-                    <Button
-                        type="primary"
-                        style={{ width: 90, marginRight: 8 }}
-                        onClick={onSearch()}
-                    >
-                        Search
-          </Button>
-                </div>
-            ),
-            filterIcon: filtered => (
-                <Icon
-                    type="search"
-                    style={{ color: filtered ? '#1890ff' : undefined }}
-                />
-            ),
+            render: (text, record) => {
 
-            onFilterDropdownVisibleChange: visible => setFDDV({ visible }),
-            sorter: (a, b) => a.Code.length - b.Code.length,
+                return (
+                    <Popover content={
+                        <div>
+                            <p>Singlemalt : {record.Singlemalt}</p>
+                            <p>Size : {record.Size}</p>
+                            <p>Packin: {record.Packing}</p>
+                        </div>
+                    }>
+                        <p>{text}</p>
+                    </Popover>
+                )
+            }
+
         },
         {
             title: 'Principle',
             dataIndex: 'Principle',
-            width: 100,
+            width: 90,
             key: 'Principle',
 
             editable: true,
@@ -150,7 +137,7 @@ display: flex
         {
             title: 'Category',
             dataIndex: 'Category',
-            width: 100,
+            width: 90,
             key: 'Category',
 
             editable: true,
@@ -158,277 +145,81 @@ display: flex
         {
             title: 'Brand',
             dataIndex: 'Brand',
-            width: 100,
+            width: 90,
             key: 'Brand',
 
             editable: true,
         },
-        {
-            title: 'Single Malt Scoth',
-            dataIndex: 'Singlemalt',
-            width: 100,
-            key: 'Singlemalt',
 
-            editable: true,
-        },
-        {
-            title: 'Size',
-            dataIndex: 'Size',
-            width: 100,
-            key: 'Size',
-
-            editable: true,
-        },
-        {
-            title: 'Packing',
-            dataIndex: 'Packing',
-            width: 100,
-            key: 'Packing',
-
-            editable: true,
-        },
         {
             title: 'Approx WS Price to Outlets',
             dataIndex: 'Approx',
-            width: 100,
+            width: 90,
             key: 'Approx',
 
             editable: true,
         },
         {
-            title: 'Contract Target/Year',
-            width: 300,
-            children: [
-                {
-                    title: 'Vol(cs)',
-                    // dataIndex: 'volcs',
-                    dataIndex: 'Month',
-                    width: 100,
-                    key: 'volcs',
-                    editable: true,
-                },
-                {
-                    title: 'Vol(btls)',
-                    // dataIndex: 'building',
-                    dataIndex: 'Year',
-                    width: 100,
-                    key: 'building',
-                    editable: true,
-                },
-                {
-                    title: 'Value',
-                    dataIndex: 'Value',
-                    width: 100,
-                    key: 'Value',
-                    editable: true,
-                },
-            ],
+            title: 'Target Vol(blts)',
+            width: 90,
+            render: (text, record) => {
+                var result = record.Volblts / 12
+                var ResString = result.toString()
+                var newRes = ResString.substring(0,4)
+                return (
+                    <p> {newRes}</p>
+                )
+            }
         },
         {
-            title: 'May 19',
-            width: 500,
-            children: [
-                {
-                    title: 'Target',
-                    dataIndex: 'age',
-                    width: 100,
-                    key: 'age',
-                    editable: true,
-                },
-                {
-                    title: 'Actual',
-                    dataIndex: 'building',
-                    width: 100,
-                    key: 'building',
-                    editable: true,
-                },
-                {
-                    title: '%',
-                    dataIndex: 'companyAddress',
-                    width: 100,
-                    key: 'companyAddress',
-                    editable: true,
-                },
-                {
-                    title: 'diff',
-                    dataIndex: '',
-                    width: 100,
-                    key: '',
-                    editable: true,
-                },
-                {
-                    title: 'Value',
-                    dataIndex: '',
-                    width: 100,
-                    key: '',
-                    editable: true,
-                },
-            ],
+            title: 'Actual(btls)',
+            dataIndex: 'ActualB',
+            width: 90,
+            key: 'ActualB',
         },
         {
-            title: 'Consumer A& P (Marketing Support)',
-            width: 1400,
-            children: [
-                {
-                    title: 'Purchasing Value',
-                    dataIndex: 'age',
-                    width: 200,
-                    key: 'age',
-                    children: [
-                        {
-                            title: 'FOC',
-                            dataIndex: 'street',
-                            width: 100,
-                            key: 'street',
-                            editable: true,
-                        },
-                        {
-                            title: 'Cash',
-                            dataIndex: 'street',
-                            width: 100,
-                            key: 'street',
-                            editable: true,
-                        },
-                    ],
-                },
-                {
-                    title: 'Purchasing Value',
-                    dataIndex: 'building',
-                    width: 200,
-                    key: 'building',
-                    children: [
-                        {
-                            title: 'FOC',
-                            dataIndex: 'street',
-                            width: 100,
-                            key: 'street',
-                            editable: true,
-                        },
-                        {
-                            title: 'Cash',
-                            dataIndex: 'street',
-                            width: 100,
-                            key: 'street',
-                            editable: true,
-                        },
-                    ],
-                },
-                {
-                    title: 'Purchasing Value',
-                    dataIndex: 'companyAddress',
-                    width: 200,
-                    key: 'companyAddress',
-                    children: [
-                        {
-                            title: 'FOC',
-                            dataIndex: 'street',
-                            width: 100,
-                            key: 'street',
-                            editable: true,
-                        },
-                        {
-                            title: 'Cash',
-                            dataIndex: 'street',
-                            width: 100,
-                            key: 'street',
-                            editable: true,
-                        },
-                    ],
-                },
-                {
-                    title: 'Purchasing Value',
-                    dataIndex: '',
-                    width: 200,
-                    key: '',
-                    children: [
-                        {
-                            title: 'FOC',
-                            dataIndex: 'street',
-                            width: 100,
-                            key: 'street',
-                            editable: true,
-                        },
-                        {
-                            title: 'Cash',
-                            dataIndex: 'street',
-                            width: 100,
-                            key: 'street',
-                            editable: true,
-                        },
-                    ],
-                },
-                {
-                    title: 'Purchasing Value',
-                    dataIndex: '',
-                    width: 200,
-                    key: '',
-                    children: [
-                        {
-                            title: 'FOC',
-                            dataIndex: 'street',
-                            width: 100,
-                            key: 'street',
-                            editable: true,
-                        },
-                        {
-                            title: 'Cash',
-                            dataIndex: 'street',
-                            width: 100,
-                            key: 'street',
-                            editable: true,
-                        },
-                    ],
-                },
-                {
-                    title: 'Purchasing Value',
-                    dataIndex: '',
-                    width: 200,
-                    key: '',
-                    children: [
-                        {
-                            title: 'FOC',
-                            dataIndex: 'street',
-                            width: 100,
-                            key: 'street',
-                            editable: true,
-                        },
-                        {
-                            title: 'Cash',
-                            dataIndex: 'street',
-                            width: 100,
-                            key: 'street',
-                            editable: true,
-                        },
-                    ],
-                },
-                {
-                    title: 'Purchasing Value',
-                    dataIndex: '',
-                    width: 200,
-                    key: '',
-                    children: [
-                        {
-                            title: 'FOC',
-                            dataIndex: 'street',
-                            width: 100,
-                            key: 'street',
-                            editable: true,
-                        },
-                        {
-                            title: 'Cash',
-                            dataIndex: 'street',
-                            width: 100,
-                            key: 'street',
-                            editable: true,
-                        },
-                    ],
-                },
-            ],
+            title: '%',
+            width: 90,
+            render: (text, record) => {
+                var target = record.Volblts /12
+                var result = record.ActualB / target
+                var ResString = result.toString()
+                var newRes = ResString.substring(0,4)
+                return (
+                    <p> {newRes}</p>
+                )
+            }
         },
+        {
+            title: 'Diff(Vol)',
+            width: 90,
+            render: (text, record) => {
+                var target = record.Volblts /12
+                var result = target - record.ActualB 
+                var ResString = result.toString()
+                var newRes = ResString.substring(0,6)   
+                return (
+                    <p> {newRes}</p>
+                )
+            }
+        },
+        {
+            title: 'Actual Value',
+            width: 90,
+            render: (text, record) => {
+                var result = record.Approx * record.ActualB  
+                var ResString = result.toString()
+                var newRes = ResString.substring(0,4)
+                return (
+                    <p> {newRes}</p>
+                )
+            }
+        },
+
         {
             title: 'Operation',
-            width: 50,
-            fixed: 'right',
+            width: 90,
+            // fixed: 'right',
             render: (text, record) => {
                 return editable ? (
                     <Button></Button>
@@ -450,6 +241,10 @@ display: flex
     const Yoptions = year.map((yearmap) => (
         <Option value={yearmap.value}>{yearmap.name}</Option>
     ))
+
+    const Pag = {
+        pageSize: 20
+    }
 
     return (
         <div>
@@ -480,7 +275,7 @@ display: flex
                     }}
                 >
                     {searchText}
-                    <TableMain scroll={scroll} column={column} data={data} />
+                    <TableMain scroll={scroll} column={column} data={data} Pag={Pag} />
                 </div>
                 <Productcard REC={REC} />
                 <Spend REC={REC} />
