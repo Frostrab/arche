@@ -71,22 +71,10 @@ display: flex
 
     const [data] = useState([])
     for (let i = 0; i < 100; i++) {
-        data.push({
-            key: i.toString(),
-            Month: `M${i}`,
-            Year: `Y${i}`,
-            Code: `SPWH${i}`,
-            Principle: 'TEG',
-            Category: 'SingleMalt',
-            Brand: 'THE',
-            Singlemalt: '12YO',
-            Size: 700,
-            Packing: '12',
-            Approx: 4173,
-            Volblts: 1,
-            ActualB:1,
-            
-        })
+        data.push(
+            REC
+
+        )
     }
     const scroll = {
         // x: '100%',
@@ -165,7 +153,7 @@ display: flex
             render: (text, record) => {
                 var result = record.Volblts / 12
                 var ResString = result.toString()
-                var newRes = ResString.substring(0,4)
+                var newRes = ResString.substring(0, 4)
                 return (
                     <p> {newRes}</p>
                 )
@@ -181,10 +169,10 @@ display: flex
             title: '%',
             width: 90,
             render: (text, record) => {
-                var target = record.Volblts /12
+                var target = record.Volblts / 12
                 var result = record.ActualB / target
                 var ResString = result.toString()
-                var newRes = ResString.substring(0,4)
+                var newRes = ResString.substring(0, 4)
                 return (
                     <p> {newRes}</p>
                 )
@@ -194,10 +182,10 @@ display: flex
             title: 'Diff(Vol)',
             width: 90,
             render: (text, record) => {
-                var target = record.Volblts /12
-                var result = target - record.ActualB 
+                var target = record.Volblts / 12
+                var result = target - record.ActualB
                 var ResString = result.toString()
-                var newRes = ResString.substring(0,6)   
+                var newRes = ResString.substring(0, 6)
                 return (
                     <p> {newRes}</p>
                 )
@@ -207,9 +195,9 @@ display: flex
             title: 'Actual Value',
             width: 90,
             render: (text, record) => {
-                var result = record.Approx * record.ActualB  
+                var result = record.Approx * record.ActualB
                 var ResString = result.toString()
-                var newRes = ResString.substring(0,4)
+                var newRes = ResString.substring(0, 4)
                 return (
                     <p> {newRes}</p>
                 )
@@ -277,7 +265,7 @@ display: flex
                     {searchText}
                     <TableMain scroll={scroll} column={column} data={data} Pag={Pag} />
                 </div>
-                <Productcard REC={REC} />
+                <Productcard REC={REC} data1={data} />
                 <Spend REC={REC} />
             </EditableContext.Provider>
         </div>

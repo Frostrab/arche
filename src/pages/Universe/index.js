@@ -35,7 +35,7 @@ const UniversePage = props => {
     color: black
     display: flex`
 
-    
+
 
 
 
@@ -46,41 +46,41 @@ const UniversePage = props => {
             width: 100,
             key: 'SaleName',
             fixed: 'left',
-            
-        //     filters: [
-        //         {
-        //             text: 'A',
-        //             value: 'A',
-        //         },
-        //     ],
-        //     filterDropdown: () => (
-        //         <div className="custom-filter-dropdown" style={{ padding: 8 }}>
-        //             <Input
-        //                 placeholder="Search name"
-        //                 // value={searchText}
-        //                 // onChange={e => setSearchText(e.target.value)}
-        //                 // onPressEnter={this.onSearch}
-        //                 style={{ width: 188, marginBottom: 8, display: 'block' }}
-        //             />
-        //             <Button
-        //                 type="primary"
-        //                 style={{ width: 90, marginRight: 8 }}
-        //             // onClick={onSearch()}
-        //             >
-        //                 Search
-        //   </Button>
-        //         </div>
-        //     ),
-        //     filterIcon: filtered => (
-        //         <Icon
-        //             type="search"
-        //             style={{ color: filtered ? '#1890ff' : undefined }}
-        //         />
-        //     ),
 
-        //     onFilterDropdownVisibleChange: visible => setFDDV({ visible }),
-        //     sorter: (a, b) => a.SaleName.length - b.SaleName.length,
-        //     sorterDirections: ['ascend', 'descend'],
+            //     filters: [
+            //         {
+            //             text: 'A',
+            //             value: 'A',
+            //         },
+            //     ],
+            //     filterDropdown: () => (
+            //         <div className="custom-filter-dropdown" style={{ padding: 8 }}>
+            //             <Input
+            //                 placeholder="Search name"
+            //                 // value={searchText}
+            //                 // onChange={e => setSearchText(e.target.value)}
+            //                 // onPressEnter={this.onSearch}
+            //                 style={{ width: 188, marginBottom: 8, display: 'block' }}
+            //             />
+            //             <Button
+            //                 type="primary"
+            //                 style={{ width: 90, marginRight: 8 }}
+            //             // onClick={onSearch()}
+            //             >
+            //                 Search
+            //   </Button>
+            //         </div>
+            //     ),
+            //     filterIcon: filtered => (
+            //         <Icon
+            //             type="search"
+            //             style={{ color: filtered ? '#1890ff' : undefined }}
+            //         />
+            //     ),
+
+            //     onFilterDropdownVisibleChange: visible => setFDDV({ visible }),
+            //     sorter: (a, b) => a.SaleName.length - b.SaleName.length,
+            //     sorterDirections: ['ascend', 'descend'],
         },
         {
             title: 'Customer Number',
@@ -142,7 +142,7 @@ const UniversePage = props => {
             dataIndex: 'Status',
             width: 100,
             key: 'Status',
-            align:'center',
+            align: 'center',
             filters: [
                 {
                     text: 'Active',
@@ -358,6 +358,19 @@ const UniversePage = props => {
         Consume: 40000,
         Supvisor: 'Mr.Krai',
         BDEName: 'BDEN',
+        key: 'X123',
+        Month: `M`,
+        Year: `Y`,
+        Code: `SPWH`,
+        Principle: 'TEG',
+        Category: 'SingleMalt',
+        Brand: 'THE',
+        Singlemalt: '12YO',
+        Size: 700,
+        Packing: '12',
+        Approx: 4173,
+        Volblts: 1,
+        ActualB: 1,
         Product: [
             {
                 Category: 'TEG',
@@ -2134,7 +2147,7 @@ const UniversePage = props => {
         // x: true,
     }
     const Pag = {
-        pageSize:4
+        pageSize: 4
     }
 
     const OnPick = record => {
@@ -2158,7 +2171,7 @@ const UniversePage = props => {
                     marginTop: 10,
                 }}
             >
-                <TableMain scroll={scroll} column={column} data={data} Pag={Pag}/>
+                <TableMain scroll={scroll} column={column} data={data} Pag={Pag} />
             </div>
         </div>
     )

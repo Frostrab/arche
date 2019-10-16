@@ -12,8 +12,11 @@ const Header = styled.div`
 
 const productcard = props => {
 
-    const Pag ={
-        pageSize:20
+  console.log('PropDat', props.data1)
+
+
+    const Pag = {
+        pageSize: 20
     }
 
     const data = []
@@ -29,14 +32,28 @@ const productcard = props => {
 
     const column = [
         {
+            title: 'Product',
+            dataIndex: 'ProductName',
+            width: 100,
+            key: 'ProductName',
+
+        },
+        {
             title: 'Contrat Target/Year',
             width: 100,
             children: [
                 {
                     title: 'Vol(cs)',
-                    dataIndex: 'CategoryName',
+                    
                     width: 100,
-                    key: 'CategoryName',
+                    render: (text, record) => {
+                        var result = props.data1.Voblts / props.data1.Packing
+                        var ResString = result.toString()
+                        var newRes = ResString.substring(0,4)
+                        return (
+                            <p> {newRes}</p>
+                        )
+                    }
                 },
                 {
                     title: 'Vol(btls)',
@@ -88,14 +105,14 @@ const productcard = props => {
                 },
             ]
         },
-        
-        
+
+
     ]
 
     return (
         <div>
             <Header>
-                <label>Product</label>
+                <label>Target</label>
             </Header>
             <div
                 style={{
