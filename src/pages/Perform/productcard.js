@@ -12,7 +12,7 @@ const Header = styled.div`
 
 const productcard = props => {
 
-  console.log('PropDat', props.data1)
+    console.log('PropDat', props.data1)
 
 
     const Pag = {
@@ -20,12 +20,17 @@ const productcard = props => {
     }
 
     const data = []
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 150; i++) {
         if (props.REC.Product[i] !== undefined) {
             data.push(
-
-                props.REC.Product[i]
-
+                {
+                    ProductName: props.REC.Product[i].ProductName,
+                    Category: props.REC.Product[i].Category,
+                    CategoryName: props.REC.Product[i].CategoryName,
+                    Volblts: props.REC.Volblts,
+                    Packing: props.REC.Packing,
+                    Approx: props.REC.Approx,
+                }
             )
         }
     }
@@ -34,7 +39,7 @@ const productcard = props => {
         {
             title: 'Product',
             dataIndex: 'ProductName',
-            width: 100,
+            width: 200,
             key: 'ProductName',
 
         },
@@ -44,12 +49,13 @@ const productcard = props => {
             children: [
                 {
                     title: 'Vol(cs)',
-                    
+
                     width: 100,
                     render: (text, record) => {
-                        var result = props.data1.Voblts / props.data1.Packing
+
+                        var result = record.Volblts / record.Packing
                         var ResString = result.toString()
-                        var newRes = ResString.substring(0,4)
+                        var newRes = ResString.substring(0, 4)
                         return (
                             <p> {newRes}</p>
                         )
@@ -57,15 +63,19 @@ const productcard = props => {
                 },
                 {
                     title: 'Vol(btls)',
-                    dataIndex: 'ProductName',
+                    dataIndex: 'Volblts',
                     width: 100,
-                    key: 'ProductName',
+                    key: 'Volblts',
                 },
                 {
-                    title: 'Status',
-                    dataIndex: 'ProductName',
+                    title: 'Value',
                     width: 100,
-                    key: 'ProductName',
+                    render: (text, record) => {
+                        var val = record.Volblts * record.Approx
+                        return (
+                            <p>{val}</p>
+                        )
+                    }
                 },
             ]
         },
@@ -75,33 +85,40 @@ const productcard = props => {
             children: [
                 {
                     title: 'Target Vol(blts)',
-                    dataIndex: 'CategoryName',
+                    dataIndex: 'Volblts',
                     width: 100,
-                    key: 'CategoryName',
+                   
                 },
                 {
                     title: 'Actual Vol(blts)',
-                    dataIndex: 'ProductName',
                     width: 100,
-                    key: 'ProductName',
+                    render: (text, record) => {
+                        return (<p>3</p>)
+                    }
                 },
                 {
                     title: '%',
-                    dataIndex: 'ProductName',
                     width: 100,
-                    key: 'ProductName',
+                    render: (text, record) => {
+                        return (<p>300%</p>)
+                    }
                 },
                 {
                     title: 'Diff(vol)',
-                    dataIndex: 'ProductName',
                     width: 100,
-                    key: 'ProductName',
+                    render: (text, record) => {
+                        return (<p>-2</p>)
+                    }
                 },
                 {
                     title: 'Actual Value',
-                    dataIndex: 'ProductName',
                     width: 100,
-                    key: 'ProductName',
+                    render: (text, record) => {
+                        var ActVal = record.Approx * 3
+                        return (
+                            <p>{ActVal}</p>
+                        )
+                    }
                 },
             ]
         },

@@ -106,6 +106,7 @@ display: flex
                             <p>Singlemalt : {record.Singlemalt}</p>
                             <p>Size : {record.Size}</p>
                             <p>Packin: {record.Packing}</p>
+                            
                         </div>
                     }>
                         <p>{text}</p>
@@ -266,7 +267,7 @@ display: flex
                     <TableMain scroll={scroll} column={column} data={data} Pag={Pag} />
                 </div>
                 <Productcard REC={REC} data1={data} />
-                <Spend REC={REC} />
+                {/* <Spend REC={REC} /> */}
             </EditableContext.Provider>
         </div>
     )

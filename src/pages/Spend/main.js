@@ -27,7 +27,7 @@ const MainCard = props => {
        bordered
        column={{ xxl: 4, xl: 3, lg: 3, md: 2, sm: 2, xs: 1 }}
       >
-          <Descriptions.Item label='outlet'>{props.REC.Outlet}</Descriptions.Item>
+          <Descriptions.Item label='Outlet'>{props.REC.Outlet}</Descriptions.Item>
           <Descriptions.Item label='Account Number'>{props.REC.AccNo}</Descriptions.Item>
           <Descriptions.Item label='Purchase Value'>{props.REC.PurchaseVal}</Descriptions.Item>
           <Descriptions.Item label='LightBox'>{props.REC.LightBox}</Descriptions.Item>
